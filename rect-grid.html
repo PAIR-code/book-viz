@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!--
+ Copyright 2020 Google LLC
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <link rel="stylesheet" href="node_modules/getmdl-select/getmdl-select.min.css">
+  <script src="node_modules/getmdl-select/getmdl-select.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  
+</head>
+
+<body>
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">TextViz</span>
+        <div class="mdl-layout-spacer"></div>
+        <div id="embChoiceDiv" class="disabled-dropdown mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="embChoice" readonly>
+          <input type="hidden" value="" name="embChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="embChoice" class="mdl-textfield-floating-label mdl-textfield__label">Embedding</label>
+          <ul for="embChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="embMenuDropdown">
+            <li class="mdl-menu__item" data-val="universal" data-selected="true">universal</li>
+          </ul>
+        </div>
+
+        <div id="vizChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="vizChoice" readonly>
+          <input type="hidden" value="" name="vizChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="vizChoice" class="mdl-textfield-floating-label mdl-textfield__label">Viz Type</label>
+          <ul for="vizChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="vizMenuDropdown">
+            <li class="mdl-menu__item" data-val="grid-plot" data-selected="true">grid-plot</li>
+          </ul>
+      </div>
+
+        <div id="reduceChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="reduceChoice" readonly>
+          <input type="hidden" value="" name="reduceChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="reduceChoice" class="mdl-textfield-floating-label mdl-textfield__label">Dim. reduction</label>
+          <ul for="reduceChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="reduceMenuDropdown">
+            <li class="mdl-menu__item" data-val="pca">pca</li>
+            <li class="mdl-menu__item" data-val="ica">ica</li>
+            <li class="mdl-menu__item" data-val="tsne" data-selected="true">tsne</li>
+            <li class="mdl-menu__item" data-val="umap">umap</li>
+          </ul>
+        </div>
+
+        <div id="avgChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="avgChoice" readonly>
+          <input type="hidden" value="" name="avgChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="avgChoice" class="mdl-textfield-floating-label mdl-textfield__label">Moving Avg Window</label>
+          <ul for="avgChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="avgMenuDropdown">
+            <li class="mdl-menu__item" data-val="0" data-selected="true">0</li>
+            <li class="mdl-menu__item" data-val="1">1</li>
+            <li class="mdl-menu__item" data-val="2">2</li>
+            <li class="mdl-menu__item" data-val="3">3</li>
+            <li class="mdl-menu__item" data-val="4">4</li>
+          </ul>
+        </div>
+
+        <div id="orderChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="orderChoice" readonly>
+          <input type="hidden" value="" name="orderChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="orderChoice" class="mdl-textfield-floating-label mdl-textfield__label">Order</label>
+          <ul for="orderChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="orderMenuDropdown">
+            <li class="mdl-menu__item" data-val="chronological" data-selected="true">chronological</li>
+            <li class="mdl-menu__item" data-val="color">color</li>
+          </ul>
+        </div>
+
+        <div id="dimChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield right-margin">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="dimChoice" readonly>
+          <input type="hidden" value="" name="dimChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="dimChoice" class="mdl-textfield-floating-label mdl-textfield__label">Components</label>
+          <ul for="dimChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="dimMenuDropdown">
+            <li class="mdl-menu__item" data-val="all" data-selected="true">all</li>
+            <li class="mdl-menu__item" data-val="0">0</li>
+            <li class="mdl-menu__item" data-val="1"">1</li>
+            <li class="mdl-menu__item" data-val="2">2</li>
+          </ul>
+        </div>
+        
+        
+        
+
+      </div>
+
+      <div class="mdl-layout__header-row">
+        <div class="mdl-layout-spacer"></div>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-textfield-free-input">
+            <input class="mdl-textfield__input" type="text" id="searchText">
+            <label class="mdl-textfield__label mdl-textfield-floating-label" for="searchText">
+              Search Text</label>
+        </div>
+
+        <div id="bookChoiceDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select medium-mdl-textfield" id="bookChoiceDiv">
+          <input type="text" value="" class="dropdown mdl-textfield__input" id="bookChoice" readonly>
+          <input type="hidden" value="" name="bookChoice">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="bookChoice" class="mdl-textfield__label mdl-textfield-floating-label">Book</label>
+          <ul for="bookChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu" id="menuDropdown">
+          </ul>
+      </div>
+
+      <div id="splitDiv" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select small-mdl-textfield" id="splitDiv">
+        <input type="text" value="" class="dropdown mdl-textfield__input" id="splitChoice" readonly>
+        <input type="hidden" value="" name="splitChoice">
+        <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+        <label for="splitChoice" class="mdl-textfield__label mdl-textfield-floating-label">Split by</label>
+        <ul for="splitChoice" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+          <li class="mdl-menu__item" data-val="sentences" data-selected="true">sentences</li>
+          <li class="mdl-menu__item" data-val="paragraphs">paragraphs</li>
+        </ul>
+    </div>
+
+      </div>
+    </header>
+
+    <main class="mdl-layout__content">
+      <div class="page-content" id="visualizationBody"></div>
+    </main>
+  </div>
+
+  <script type="text/javascript" src="dist/bundle.js"></script>
+</body>
+
+</html>

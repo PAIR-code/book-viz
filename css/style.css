@@ -1,0 +1,324 @@
+/**
+ * Copyright 2020 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/* MDL component adjustments */
+.small-mdl-textfield {
+  width: 130px;
+}
+
+.medium-mdl-textfield {
+  width: 250px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.mdl-textfield-floating-label {
+  color: white !important;
+  font-size: 11px !important;
+  font-style: italic;
+}
+
+.mdl-layout__header-row {
+  padding-left: 40px !important;
+}
+
+.menu-button {
+    color: white;
+}
+  
+.page-content {
+  text-align: center;
+}
+
+.right-margin {
+  margin-right: 20px;
+}
+
+.disabled-dropdown {
+  pointer-events: none; 
+  opacity: 0.5;
+}
+
+.mdl-textfield-free-input {
+  width: 200px;
+  margin: 15px;
+}
+
+/* SVG CSS */
+div.tooltip {
+  color: black;
+  position: absolute;
+  text-align: left;
+  width: auto;
+  height: auto;
+  padding: 5px;
+  font-family: Futura;
+  font: 12px sans-serif ;
+  background: #E7E7E7;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+  z-index: 1000;
+  width: 200px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: black
+}
+
+.svg-container {
+  display: inline-block;
+  position: fixed;
+  width: 95%;
+  /* margin-left: 2.5%;
+  margin-right: 2.5%; */
+  padding-bottom: 100%; /* aspect ratio */
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.left-side {
+  float: left;
+  left: 3%;
+  max-width: 45%;
+}
+
+.svg-content-responsive {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+}
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
+
+
+/* SCROLL CSS */   
+html,
+main{
+  height: 100%;
+  padding: 0;
+  scroll-behavior: smooth;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+h2{
+  line-height: 1.25;
+  padding-top: 45px;
+  font-weight: 300;
+}
+svg{
+  padding: 10px;
+}
+text{
+  font-size: 10px;
+}
+strong{
+  font-weight: 600;
+}
+#graphic {
+  max-width:  1440px;
+  width: 100%;
+  position:   relative; 
+  height:  100%;
+  position:  relative; 
+  margin:auto;
+}
+
+.container-scroll {
+  margin: 0 0 0 30px;
+  padding: 0;
+  position: absolute;
+  height: 100%;
+  line-height: 1.5;
+  width: 50%;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  height: 100%;
+  line-height: 1.5;
+  width: 45%;
+}
+
+.right-side {
+  left: 50%;
+}
+
+.container div {
+  display: block;
+}
+.fixed {
+  position: fixed;
+  width: 30%;
+  left: 45%;
+}
+
+.fixed-scroll {
+  position: fixed;
+  width: 40%;
+  left: 60%;
+}
+
+/* INFO BOX CSS */
+.info {
+  position: fixed;
+  left: 68%;
+  width: 27%;
+  padding: 2%;
+  background-color: rgba(1,1,1,0.05);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.info-header {
+  font-family: serif; 
+  font-style: italic;
+}
+
+.info-words {
+  font-family: monospace;
+}
+
+.info-text{
+  font-family: 'PT Serif', serif;
+  font-size: 10pt;
+  margin-bottom: 2px;
+}
+
+.background-highlight {
+  background-color: blue;
+  opacity: 0.2;
+  height: 50px;
+  width: 50%;
+  position: fixed;
+  top: 50%;
+  left: 20px;
+}
+
+.book-exerpt:hover {
+  font-weight: bold;
+}
+
+/* TEXT CSS */
+p {
+  font-size: 12pt;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+  font-family: 'PT Serif', serif;
+  font-weight: 500;
+  color: black;
+}
+
+.sentence {
+  cursor: pointer;
+}
+
+.underline {
+  border-bottom: 3px solid;
+  display: inline-block;
+  line-height: 0.85;
+}
+
+/* arrows */
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0px 10px 3px  10px;
+  font-size: 14pt;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.previous {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.level-select {
+  left: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+
+/* MODAL POP UP */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 48%;
+  top: 0;
+  width: 52%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.annotation {
+  /* font-size: 7pt; */
+  opacity: 0.6;
+}

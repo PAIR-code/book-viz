@@ -1,0 +1,4 @@
+node_modules/
+dist/
+data/*
+!data/raw_book_text
